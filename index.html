@@ -116,15 +116,12 @@
             };
 
       document.body.appendChild(script);
-
-      
-      function SendToAndroid(message) {
-              if (window.UnityBridge && typeof window.UnityBridge.sendMessageToAndroid === 'function') {
-                  window.UnityBridge.sendMessageToAndroid(message);
-              }
-          }
-        
-        
+      function SendToJavaScript(message) {
+          console.log("msg==>",message);
+             if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
+                 window.UnityBridge.receiveMessage(message);
+             }
+         }
     </script>
   </body>
 </html>
