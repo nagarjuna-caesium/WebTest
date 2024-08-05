@@ -116,7 +116,7 @@
             };
 
       document.body.appendChild(script);
-      function SendToJavaScript(message) {
+      function SendToAndroid(message) {
           console.log("msg==>",message);
              if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
                  window.UnityBridge.receiveMessage(message);
