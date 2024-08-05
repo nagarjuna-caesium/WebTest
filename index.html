@@ -117,6 +117,14 @@
 
       document.body.appendChild(script);
 
+      
+      function SendToAndroid(message) {
+              if (window.UnityBridge && typeof window.UnityBridge.sendMessageToAndroid === 'function') {
+                  window.UnityBridge.sendMessageToAndroid(message);
+              }
+          }
+        
+        
     </script>
   </body>
 </html>
