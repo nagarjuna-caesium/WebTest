@@ -169,6 +169,7 @@ let minstance = null;
           window.alert("Hello, java! ="+minstance);
             if (typeof minstance !== 'undefined') {
                 // Send a message from JavaScript to Unity
+               console.log('Sucess. Sending message:', message);
                 minstance.SendMessage('WebDataReader', 'ReceiveMessage', message);
             } else {
                 console.log('Unity instance is not available');
