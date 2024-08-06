@@ -142,7 +142,8 @@ let minstance = null;
             }
         }
 
-        function SendToBAndroid() {
+        function SendToBAndroid(instance) {
+           minstance=unityInstance;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
           alert('Received messageA: ' + message);
