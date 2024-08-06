@@ -127,10 +127,11 @@ let minstance = null;
               }).then((unityInstance) => {
           console.log("msg ddone==>"+unityInstance);
                 loadingBar.style.display = "none";
+           minstance=unityInstance;
                 fullscreenButton.onclick = () => {
                     console.log("msg unityInstance==>",unityInstance);
                   unityInstance.SetFullscreen(1);
-                  minstance=unityInstance;
+                 
                     console.log("msg unityInstanceB==>",unityInstance);
                   
                 };
