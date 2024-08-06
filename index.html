@@ -6,6 +6,23 @@
     <title>Unity WebGL Player | TestProjWeb</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+
+     <script>
+        // Initialize Unity WebGL build
+        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/YourBuild.json", {
+            onProgress: function (unityInstance, progress) {
+                console.log("Loading progress: " + progress);
+            },
+            onError: function (message) {
+                console.error("Unity error: " + message);
+            },
+            onLoaded: function (unityInstance) {
+                console.log("Unity WebGL build loaded successfully.");
+                // The unityInstance is now available
+            }
+        });
+    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
