@@ -119,6 +119,7 @@
       function SendToAndroid(message) {
           console.log("msg==>",message);
              if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
+               console.log("msg in fun ==>",message);
                  window.UnityBridge.receiveMessage(message);
              }
          }
