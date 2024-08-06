@@ -99,7 +99,7 @@
       }
 
       loadingBar.style.display = "block";
-
+let minstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -107,6 +107,7 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
+          minstance=unityInstance;
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
@@ -116,7 +117,22 @@
             };
 
       document.body.appendChild(script);
+  function sendMessageToUnity(message) {
+          window.alert("Hello, java! ="+minstance);
+            if (typeof minstance !== 'undefined') {
+                // Send a message from JavaScript to Unity
+               console.log('Sucess. Sending message:', message);
+                minstance.SendMessage('MsgHD', 'ReceiveMessage', message);
+            } else {
+                console.log('Unity instance is not available');
+            }
+        }
 
+        function SendToAndroid() {
+            var message = 'Hello from JavaScript!';
+            console.log('JavaScript function executed. Sending message:', message);
+            sendMessageToUnity(message);
+        }
     </script>
   </body>
 </html>
