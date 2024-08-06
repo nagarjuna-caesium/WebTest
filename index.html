@@ -128,7 +128,7 @@
                console.log("msg in fun A==>",message);
         console.log("msg in fun b==>",window.UnityBridge);
 
-        window.alert("Hello, world!");
+        window.alert("Hello, world!",message);
              if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
                console.log("msg in fun c==>",message);
                  window.UnityBridge.receiveMessage(message);
