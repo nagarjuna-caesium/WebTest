@@ -6,23 +6,6 @@
     <title>Unity WebGL Player | TestProjWeb</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
-
-     <script>
-        // Initialize Unity WebGL build
-        var unityInstance = UnityLoader.instantiate("unityContainer", "Build/YourBuild.json", {
-            onProgress: function (unityInstance, progress) {
-                console.log("Loading progress: " + progress);
-            },
-            onError: function (message) {
-                console.error("Unity error: " + message);
-            },
-            onLoaded: function (unityInstance) {
-                console.log("Unity WebGL build loaded successfully.");
-                // The unityInstance is now available
-            }
-        });
-    </script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -116,71 +99,24 @@
       }
 
       loadingBar.style.display = "block";
-let minstance = null;
+
       var script = document.createElement("script");
       script.src = loaderUrl;
-       console.log("msg loaderUrl==>",loaderUrl);
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          console.log("msg progress==>",progress);
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-          console.log("msg ddone==>"+unityInstance);
                 loadingBar.style.display = "none";
-           minstance=unityInstance;
                 fullscreenButton.onclick = () => {
-                    console.log("msg unityInstance==>",unityInstance);
                   unityInstance.SetFullscreen(1);
-                 
-                    console.log("msg unityInstanceB==>",unityInstance);
-                  
                 };
               }).catch((message) => {
-                
-           window.alert("Hello, Error!  ",message);
+                alert(message);
               });
             };
 
       document.body.appendChild(script);
 
-      window.UnityBridge = {
-            receiveMessage: function(message) {
-                console.log("Received message in UnityBridge:", message);
-            }
-        };
-
-   
-
-      
-      function SendToAAndroid(message) {
-          console.log("msg==>",message);
-               console.log("msg in fun A==>",message);
-        console.log("msg in fun b==>",window.UnityBridge);
-
-        window.alert("Hello, msg! ="+window.UnityBridge);
-             if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
-               console.log("msg in fun c==>",message);
-                 window.UnityBridge.receiveMessage(message);
-             }
-         }
-
-
-       function sendMessageToUnity(message) {
-          window.alert("Hello, java! ="+minstance);
-            if (typeof minstance !== 'undefined') {
-                // Send a message from JavaScript to Unity
-               console.log('Sucess. Sending message:', message);
-                minstance.SendMessage('WebDataReader', 'ReceiveMessage', message);
-            } else {
-                console.log('Unity instance is not available');
-            }
-        }
-
-        function SendToAndroid() {
-            var message = 'Hello from JavaScript!';
-            console.log('JavaScript function executed. Sending message:', message);
-            sendMessageToUnity(message);
-        }
     </script>
   </body>
 </html>
