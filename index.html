@@ -17,6 +17,27 @@
         function anotherFunction() {
             console.log('Another JavaScript function called');
         }
+
+
+
+    window.unityInteractions = {
+            unityInstance: null,
+
+            setUnityInstance: function(instance) {
+                this.unityInstance = instance;
+                console.log('Unity instance set:', instance);
+
+              alert('Received unityInteractions: ' + instance);
+            },
+
+            callUnityMethod: function(methodName) {
+                if (this.unityInstance && typeof this.unityInstance[methodName] === 'function') {
+                    this.unityInstance[methodName]();
+                } else {
+                    console.error('Method not found on Unity instance:', methodName);
+                }
+            }
+        };
     </script>
 
     
