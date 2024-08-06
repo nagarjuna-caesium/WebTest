@@ -123,6 +123,16 @@
             };
 
       document.body.appendChild(script);
+
+      window.UnityBridge = {
+            receiveMessage: function(message) {
+                console.log("Received message in UnityBridge:", message);
+            }
+        };
+
+   
+
+      
       function SendToAndroid(message) {
           console.log("msg==>",message);
                console.log("msg in fun A==>",message);
