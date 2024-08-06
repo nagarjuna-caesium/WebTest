@@ -102,6 +102,7 @@
 
       var script = document.createElement("script");
       script.src = loaderUrl;
+       console.log("msg loaderUrl==>",loaderUrl);
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
@@ -114,7 +115,8 @@
                   
                 };
               }).catch((message) => {
-                alert(message);
+                
+           window.alert("Hello, Error!  ",message);
               });
             };
 
