@@ -23,6 +23,10 @@
     window.unityInteractions = {
             unityInstance: null,
 
+       function myJavaScriptFunction(message) {
+           
+            alert('Received message ui: ' + message);
+        }
             setUnityInstance: function(instance) {
                 this.unityInstance = instance;
                 console.log('Unity instance set:', instance);
