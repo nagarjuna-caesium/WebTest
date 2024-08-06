@@ -118,8 +118,10 @@
       document.body.appendChild(script);
       function SendToAndroid(message) {
           console.log("msg==>",message);
+               console.log("msg in fun A==>",message);
+        
              if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
-               console.log("msg in fun ==>",message);
+               console.log("msg in fun B==>",message);
                  window.UnityBridge.receiveMessage(message);
              }
          }
