@@ -122,7 +122,7 @@ let minstance = null;
             if (typeof minstance !== 'undefined') {
                 // Send a message from JavaScript to Unity
                console.log('Sucess. Sending message:', message);
-                minstance.SendMessage('MsgHD', 'ReceiveMessage', message);
+                minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
             } else {
                 console.log('Unity instance is not available');
             }
