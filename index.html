@@ -6,6 +6,15 @@
     <title>Unity WebGL Player | TestProjWeb</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+
+     window.UnityBridge = {
+            receiveMessage: function(message) {
+                console.log("Received message in UnityBridge:", message);
+            }
+        };
+
+    
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -128,11 +137,23 @@ let minstance = null;
             }
         }
 
-        function SendToAndroid() {
+        function SendToBAndroid() {
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
             sendMessageToUnity(message);
         }
+
+
+      function SendToAndroid(message) {
+         console.log('SendToAndroid bridge:', window.UnityBridge);
+        console.log('SendToAndroid msg:', message);
+        if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
+            window.UnityBridge.receiveMessage(message);
+        }
+    }
+
+
+      
     </script>
   </body>
 </html>
