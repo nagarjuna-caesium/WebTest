@@ -105,8 +105,10 @@
        console.log("msg loaderUrl==>",loaderUrl);
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
+          console.log("msg progress==>",progress);
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
+          console.log("msg ddone==>"+unityInstance);
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                     console.log("msg unityInstance==>",unityInstance);
