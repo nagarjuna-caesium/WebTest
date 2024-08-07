@@ -105,7 +105,7 @@
 
       loadingBar.style.display = "block";
 let minstance = null;
-  let m_window = null;    
+ 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -123,9 +123,11 @@ let minstance = null;
             };
 
       document.body.appendChild(script);
+
+       let m_window = null;    
   function sendMessageToUnity(message) {
           window.alert("Hello, java ==>! ="+minstance+" , "+m_window);
-    console.log('sendMessageToUnity:', minstance,';',m_window);
+    console.log('sendMessageToUnity:', m_window);
             if (typeof minstance !== 'undefined') {
                 // Send a message from JavaScript to Unity
                console.log('Sucess. Sending message:', message);
