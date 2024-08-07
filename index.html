@@ -169,10 +169,9 @@ let minstance = null;
     }
 
        function SendToAndroid(message) {
-         console.log('SendToAndroid bridge:', window.UnityBridge);
+         console.log('SendToAndroid bridge:', m_window);
         console.log('SendToAndroid msg:', message);
-      //  alert('Received SendToAndroid: ' + window);
-      sendMessageToUnity(message);
+      
        }
 
 
