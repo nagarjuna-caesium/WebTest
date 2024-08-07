@@ -124,12 +124,14 @@ let minstance = null;
 
       document.body.appendChild(script);
   function sendMessageToUnity(message) {
-          window.alert("Hello, java DSF! ="+minstance+" , "+m_window);
+          window.alert("Hello, java ==>! ="+minstance+" , "+m_window);
             if (typeof minstance !== 'undefined') {
                 // Send a message from JavaScript to Unity
                console.log('Sucess. Sending message:', message);
                 minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
+              if(m_window !=null){
               m_window.location = "uniwebview://myMsg";
+              }
             } else {
                 console.log('Unity instance is not available');
             }
