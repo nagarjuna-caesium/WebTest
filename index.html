@@ -140,7 +140,7 @@ let minstance = null;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
           alert('Received messageBXC: ' + minstance+","+instance);
-          instance.location = "uniwebview://"+message;
+          instance.location = "uniwebview://",message;
           m_window=instance;
           console.log('SendToBAndroid:', m_window);
           // instance.SendMessage('Main Camera', 'ReceiveMessage', message);
