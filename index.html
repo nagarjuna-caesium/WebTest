@@ -138,7 +138,9 @@ let minstance = null;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
           alert('Received messageBXC: ' + minstance+","+instance+",unityInstance="+this.unityInstance);
-            sendMessageToUnity(message);
+          instance.location = "uniwebview://videoended";
+          //  sendMessageToUnity(message);
+          
         }
 
 
