@@ -176,7 +176,7 @@ let minstance = null;
         }
 
 
-      function SendToAndroid(message) {
+      function SendToAndroidOld(message) {
          console.log('SendToAndroid bridge:', window.UnityBridge);
         console.log('SendToAndroid msg:', message);
         alert('Received messageA: ' + message);
@@ -184,6 +184,15 @@ let minstance = null;
         if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
             window.UnityBridge.receiveMessage(message);
         }
+
+
+        function SendToAndroid(message) {
+         console.log('SendToAndroid bridge:', window.UnityBridge);
+        console.log('SendToAndroid msg:', message);
+        alert('Received messageA: ' + message);
+      window.location = "uniwebview://videoended";
+
+          
     }
 
 
