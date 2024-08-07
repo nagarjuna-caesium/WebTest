@@ -114,8 +114,7 @@ let minstance = null;
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
           minstance=unityInstance;
-          console.log('JSS onLOAD OBJECT:', minstance);
-           console.log('JSS onLOAD WINDOW:', m_window);
+          
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
@@ -123,7 +122,8 @@ let minstance = null;
                 alert(message);
               });
             };
-
+console.log('JSS onLOAD OBJECT:', minstance);
+           console.log('JSS onLOAD WINDOW:', m_window);
       document.body.appendChild(script);
 
        let m_window = null;    
