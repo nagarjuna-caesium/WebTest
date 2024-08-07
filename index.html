@@ -129,6 +129,7 @@ let minstance = null;
                 // Send a message from JavaScript to Unity
                console.log('Sucess. Sending message:', message);
                 minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
+              m_window.location = "uniwebview://"+message;
             } else {
                 console.log('Unity instance is not available');
             }
@@ -141,7 +142,7 @@ let minstance = null;
           alert('Received messageBXC: ' + minstance+","+m_window);
           m_window.location = "uniwebview://"+message;
           // instance.SendMessage('Main Camera', 'ReceiveMessage', message);
-            sendMessageToUnity(message);
+          //  sendMessageToUnity(message);
           
         }
 
@@ -165,7 +166,7 @@ let minstance = null;
          console.log('SendToAndroid bridge:', window.UnityBridge);
         console.log('SendToAndroid msg:', message);
         alert('Received SendToAndroid: ' + window);
-      window.location = "uniwebview://videoended";
+      sendMessageToUnity(message);
        }
 
 
