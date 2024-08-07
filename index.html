@@ -8,41 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
 
 
-<script>
-        function myJavaScriptFunction(message) {
-            console.log('JavaScript function called with message:', message);
-            alert('Received message: ' + message);
-        }
-        
-        function anotherFunction() {
-            console.log('Another JavaScript function called');
-        }
 
-
-
-    window.unityInteractions = {
-            unityInstance: null,
-
-       function myJavaScriptFunction(message) {
-           
-            alert('Received message ui: ' + message);
-        }
-            setUnityInstance: function(instance) {
-                this.unityInstance = instance;
-                console.log('Unity instance set:', instance);
-
-              alert('Received unityInteractions: ' + instance);
-            },
-
-            callUnityMethod: function(methodName) {
-                if (this.unityInstance && typeof this.unityInstance[methodName] === 'function') {
-                    this.unityInstance[methodName]();
-                } else {
-                    console.error('Method not found on Unity instance:', methodName);
-                }
-            }
-        };
-    </script>
 
     
   </head>
