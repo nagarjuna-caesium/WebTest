@@ -125,6 +125,7 @@ let minstance = null;
       document.body.appendChild(script);
   function sendMessageToUnity(message) {
           window.alert("Hello, java ==>! ="+minstance+" , "+m_window);
+    console.log('sendMessageToUnity:', minstance,';',m_window);
             if (typeof minstance !== 'undefined') {
                 // Send a message from JavaScript to Unity
                console.log('Sucess. Sending message:', message);
