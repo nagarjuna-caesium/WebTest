@@ -36,7 +36,7 @@
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
- let m_window = null;
+
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
       // If type=='warning', a yellow highlight color is used.
@@ -105,7 +105,7 @@
 
       loadingBar.style.display = "block";
 let minstance = null;
-     
+  let m_window = null;    
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -136,12 +136,12 @@ let minstance = null;
         }
 
         function SendToBAndroid(instance) {
-           //m_window=instance;
+           m_window=instance;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
           alert('Received messageBXC: ' + minstance+","+instance);
           instance.location = "uniwebview://mnkl";
-          m_window=instance;
+          
           console.log('SendToBAndroid:', m_window);
           // instance.SendMessage('Main Camera', 'ReceiveMessage', message);
           //  sendMessageToUnity(message);
