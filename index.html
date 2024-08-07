@@ -129,7 +129,7 @@ let minstance = null;
                 // Send a message from JavaScript to Unity
                console.log('Sucess. Sending message:', message);
                 minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
-              m_window.location = "uniwebview://"+message;
+              m_window.location = "uniwebview://myMsg";
             } else {
                 console.log('Unity instance is not available');
             }
@@ -139,10 +139,10 @@ let minstance = null;
            m_window=instance;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
-          alert('Received messageBXC: ' + minstance+","+instance);
+          alert('Received messageBXC: ' + m_window+","+instance);
           instance.location = "uniwebview://video_over";
           
-          console.log('SendToBAndroid:', m_window);
+          console.log('SendToBAndroid:Done');
           // instance.SendMessage('Main Camera', 'ReceiveMessage', message);
           //  sendMessageToUnity(message);
           
