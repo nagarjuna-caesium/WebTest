@@ -180,6 +180,11 @@ let minstance = null;
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
 
  //window.location = "uniwebview://video_over_A";
+
+
+            if (window.unityInstance) {
+        window.unityInstance.SendMessage('Main Camera', 'ReceiveMessage', 'XCS');
+    }
            if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
             window.UnityBridge.receiveMessage('ABC');
         }
