@@ -147,7 +147,7 @@ let minstance = null;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
 
-             console.log('fromAndroid #',m_window);
+             console.log('fromAndroid',m_window);
           alert('Received message==>: ' + window+","+m_window);
           m_window.location = "uniwebview://video_over_B";
           
@@ -175,8 +175,8 @@ let minstance = null;
        function SendToAndroid(message) {
 
          alert('Unity_WB: ' + minstance);
-         console.log('errt#',message);
-         console.log('fromWeb #',m_window);
+         console.log('errt',message);
+         console.log('fromWeb',m_window);
       
          if (typeof minstance !== 'undefined') {
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
