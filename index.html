@@ -99,6 +99,8 @@
       }
 
       loadingBar.style.display = "block";
+        let minstance = null;
+        let m_window = null;
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -106,7 +108,8 @@
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-                loadingBar.style.display = "none";
+                  loadingBar.style.display = "none";
+                  minstance = unityInstance;
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
@@ -115,7 +118,45 @@
               });
             };
 
-      document.body.appendChild(script);
+        document.body.appendChild(script);
+
+
+        function SendToAndroid(message) {
+            console.log('mMSG#'message);
+            //console.log('SendToAndroid msg:', minstance);
+
+        }
+          
+
+        function SendToBAndroid(instance) {
+            m_window = instance;
+            var message = 'Hello from JavaScript!';
+            console.log('JavaScript function executed. Sending message:', message);
+           // alert('Received message==>: ' + m_window + "," + minstance);
+            m_window.location = "uniwebview://video_over";
+
+            sendMessageToUnity(message);
+
+        }
+
+
+        function sendMessageToUnity(message) {
+            window.alert("Hello, java ==>! =" + minstance + " , " + m_window);
+            console.log('sendMessageToUnity:', m_window);
+            if (typeof minstance !== 'undefined') {
+                // Send a message from JavaScript to Unity
+                console.log('Sucess. Sending message:', message);
+                minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
+                if (m_window != null) {
+                    m_window.location = "uniwebview://myMsg";
+                }
+            } else {
+                console.log('Unity instance is not available');
+            }
+        }
+
+
+
 
     </script>
   </body>
