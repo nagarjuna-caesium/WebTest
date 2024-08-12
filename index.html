@@ -172,7 +172,8 @@ let minstance = null;
        function SendToAndroid(message) {
 
          alert('Unity_WB: ' + minstance);
-         console.log('mMSG#',message);
+         console.log('mMSG#',window);
+         console.log('mMSGUB#',window.UnityBridge);
         //console.log('SendToAndroid msg:', minstance);
          if (typeof minstance !== 'undefined') {
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
