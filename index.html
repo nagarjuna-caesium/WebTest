@@ -176,6 +176,13 @@ let minstance = null;
         //console.log('SendToAndroid msg:', minstance);
          if (typeof minstance !== 'undefined') {
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
+
+
+           if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
+            window.UnityBridge.receiveMessage('ABC');
+        }
+
+           
     }
       
        }
