@@ -143,10 +143,11 @@ let minstance = null;
 
         function SendToBAndroid(instance) {
            m_window=instance;
+          window=instance;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
-          alert('Received message==>: ' + m_window+","+minstance);
-          m_window.location = "uniwebview://video_over";
+          alert('Received message==>: ' + window+","+minstance);
+          window.location = "uniwebview://video_over";
           
           console.log('SendToBAndroid:Done');
          
@@ -178,7 +179,7 @@ let minstance = null;
          if (typeof minstance !== 'undefined') {
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
 
- window.location = "uniwebview://video_over";
+ //window.location = "uniwebview://video_over";
            if (window.UnityBridge && typeof window.UnityBridge.receiveMessage === 'function') {
             window.UnityBridge.receiveMessage('ABC');
         }
