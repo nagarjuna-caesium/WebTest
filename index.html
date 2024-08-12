@@ -171,11 +171,11 @@ let minstance = null;
 
        function SendToAndroid(message) {
 
-         alert('Unity_W: ' + minstance);
+         alert('Unity_WA: ' + minstance);
          console.log('mMSG#',message);
         //console.log('SendToAndroid msg:', minstance);
          if (typeof minstance !== 'undefined') {
-        unityInstance.SendMessage('Main Camera', 'OnMessageReceived', message);
+        unityInstance.SendMessage('Main Camera', 'ReceiveMessage', message);
     }
       
        }
