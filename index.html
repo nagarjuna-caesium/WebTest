@@ -171,10 +171,10 @@ let minstance = null;
 
        function SendToAndroid(message) {
 
-         alert('Unity_W: ' + unityInstance);
+         alert('Unity_W: ' + minstance);
          console.log('mMSG#',message);
         //console.log('SendToAndroid msg:', minstance);
-         if (typeof unityInstance !== 'undefined') {
+         if (typeof minstance !== 'undefined') {
         unityInstance.SendMessage('WebViewController', 'OnMessageReceived', message);
     }
       
