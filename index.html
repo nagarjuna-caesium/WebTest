@@ -123,7 +123,7 @@ let minstance = null;
               });
             };
 
-      document.body.appendChild(script);
+      
 
        let m_window = null;    
   function sendMessageToUnity(message) {
@@ -171,11 +171,11 @@ let minstance = null;
 
        function SendToAndroid(message) {
          console.log('SendToAndroid bridge:', m_window);
-        console.log('SendToAndroid msg:', window);
+        console.log('SendToAndroid msg:', minstance);
       
        }
 
-
+document.body.appendChild(script);
       
     </script>
   </body>
