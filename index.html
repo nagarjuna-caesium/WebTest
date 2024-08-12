@@ -176,16 +176,15 @@ let minstance = null;
 
        function SendToAndroid(message) {
 
-         alert('Unity_WB: ' + minstance);
-         console.log('errt',message);
-         console.log('fromWeb',m_window);
+        
+          alert('Received Unity_WB==>: ' + window+","+m_window);
       
          if (typeof minstance !== 'undefined') {
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
 
  //window.location = "uniwebview://video_over_A";
 
-
+alert('Received Unity_WB bb ==>: ' + window.unityInstance+","+m_window);
             if (window.unityInstance) {
         window.unityInstance.SendMessage('Main Camera', 'ReceiveMessage', 'XCS');
     }
