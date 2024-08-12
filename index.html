@@ -143,11 +143,11 @@ let minstance = null;
 
         function SendToBAndroid(instance) {
            m_window=instance;
-          window=instance;
+          //window=instance;
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
-          alert('Received message==>: ' + window+","+minstance);
-          window.location = "uniwebview://video_over_B";
+          alert('Received message==>: ' + window+","+m_window);
+          m_window.location = "uniwebview://video_over_B";
           
           console.log('SendToBAndroid:Done');
          
