@@ -143,7 +143,7 @@ let minstance = null;
 
         function SendToBAndroid(instance) {
            m_window=instance;
-          //window=instance;
+         
             var message = 'Hello from JavaScript!';
             console.log('JavaScript function executed. Sending message:', message);
           alert('Received message==>: ' + window+","+m_window);
@@ -175,8 +175,7 @@ let minstance = null;
          alert('Unity_WB: ' + minstance);
          console.log('errt#',message);
          console.log('mertyy#',window);
-         //console.log('mMSGUB#',window.UnityBridge);
-        //console.log('SendToAndroid msg:', minstance);
+      
          if (typeof minstance !== 'undefined') {
         minstance.SendMessage('Main Camera', 'ReceiveMessage', message);
 
