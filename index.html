@@ -175,7 +175,7 @@ let minstance = null;
          console.log('mMSG#',message);
         //console.log('SendToAndroid msg:', minstance);
          if (typeof minstance !== 'undefined') {
-        unityInstance.SendMessage('WebViewController', 'OnMessageReceived', message);
+        unityInstance.SendMessage('Main Camera', 'OnMessageReceived', message);
     }
       
        }
