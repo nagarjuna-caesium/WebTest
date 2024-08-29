@@ -15,7 +15,20 @@
   <body>
 
 
-    <div id="adsense-container">
+ 
+
+    
+     
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
+      <div id="unity-loading-bar">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+      </div>
+
+         <div id="adsense-container">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5605623336811636"
      crossorigin="anonymous"></script>
 <!-- TestFullInit -->
@@ -30,16 +43,7 @@
 </script>
 </div>
 
-    
-     
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
+      
       <div id="unity-warning"> </div>
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
@@ -209,15 +213,16 @@ window=m_window;
 
  window.location = "uniwebview://video_over_A";
 
-//alert('Received Unity_WB bba aa ==>: ' + window.unityInstance+","+m_window);
+//alert('Received Unity_WB bba aa ht ==>: ' + window.unityInstance+","+m_window);
 
             var adContainer = document.getElementById('adsense-container');
 
-           alert('Received Unity_WB swe==>: ' + adContainer+","+m_window);
+           alert('Received Unity_WB swe ht ==>: ' + adContainer+","+m_window);
             if (adContainer) {
                 adContainer.style.display = 'block';
                 // Optional: Refresh or load the ad if necessary
                 (adsbygoogle = window.adsbygoogle || []).push({});
+               
             }
 
            
