@@ -14,7 +14,9 @@
   </head>
   <body>
 
-     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5605623336811636"
+
+    <div id="adsense-container">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5605623336811636"
      crossorigin="anonymous"></script>
 <!-- TestFullInit -->
 <ins class="adsbygoogle"
@@ -26,6 +28,10 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</div>
+
+    
+     
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -187,6 +193,12 @@ window=m_window;
           
     }
 
+      var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        googletag.pubads = googletag.pubads || function() { return {}; };
+        googletag.pubads().getSlots = googletag.pubads().getSlots || function() { return []; };
+
+
        function SendToAndroid(message) {
 
         
@@ -197,7 +209,16 @@ window=m_window;
 
  window.location = "uniwebview://video_over_A";
 
-alert('Received Unity_WB bb ==>: ' + window.unityInstance+","+m_window);
+alert('Received Unity_WB bba aa ==>: ' + window.unityInstance+","+m_window);
+
+            var adContainer = document.getElementById('adsense-container');
+            if (adContainer) {
+                adContainer.style.display = 'block';
+                // Optional: Refresh or load the ad if necessary
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+
+           
             if (window.unityInstance) {
         window.unityInstance.SendMessage('Main Camera', 'ReceiveMessage', 'XCS');
     }
